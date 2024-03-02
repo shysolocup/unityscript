@@ -21,6 +21,7 @@ class Scene {
 
         this.occlusionCullingSetting = this.createSettingChild('OcclusionCullingSettings', stuff);
         this.renderSettings = this.createSettingChild('RenderSettings', stuff);
+        this.lightMapSettings = this.createSettingChild('LightMapSettings', stuff);
     }
 
     createSettingChild(setting, settings) {
