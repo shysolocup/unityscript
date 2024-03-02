@@ -16,7 +16,7 @@ class Reflection {
         this.intensity = this.__getSetting("m_ReflectionIntensity", settings);
 
         let custom = this.__getSetting("m_CustomReflection", settings, { keepAsString: true});
-        this.custom = parseInt(custom.substring(9, custom.length));
+        this.custom = parseInt(custom.substring(9, custom.length-1));
     }
 }
 
