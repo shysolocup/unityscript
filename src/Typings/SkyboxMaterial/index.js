@@ -9,9 +9,8 @@ class SkyboxMaterial {
         Object.assign(this, baseSettings);
         util.inherits(this.constructor, baseSettings.constructor);
         
-        this.fileID = this.__getSetting("fileID", settings);
+        this.texture = this.__getSetting("fileID", settings);
         this.guid = this.__getSetting("guid", settings, { keepAsString: true });
-        this.fileID = this.__getSetting("fileID", settings);
         this.type = this.__getSetting("type", settings);
     }
 }
