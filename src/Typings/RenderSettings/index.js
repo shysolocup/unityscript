@@ -16,6 +16,8 @@ class RenderSettings {
         let spotCookie = this.__getSetting("m_SpotCookie", settings, { keepAsString: true});
         spotCookie = spotCookie.substring(1, spotCookie.length-1)
         this.spotCookie = new this.parent.SpotCookie(spotCookie.split(", "), baseSettings);
+
+        this.reflection = new this.parent.Reflection(settings, baseSettings);
     }
 }
 
