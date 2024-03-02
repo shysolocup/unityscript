@@ -14,13 +14,16 @@ class RenderSettings {
         this.flare = new this.parent.Flare(settings, baseSettings);
 
         let spotCookie = this.__getSetting("m_SpotCookie", settings, { keepAsString: true});
-        spotCookie = spotCookie.substring(1, spotCookie.length-1)
+        spotCookie = spotCookie.substring(1, spotCookie.length-1);
         this.spotCookie = new this.parent.SpotCookie(spotCookie.split(", "), baseSettings);
 
         this.reflection = new this.parent.Reflection(settings, baseSettings);
         
         let sunTexture = this.__getSetting("m_Sun", settings, { keepAsString: true});
-        this.sunTexture = parseInt(sunTexture.substring(9, sunTexture.length-1))
+        this.sunTexture = parseInt(sunTexture.substring(9, sunTexture.length-1));
+
+        this.indirectSpecularColor = this.parent.Color.fromColor3(this.__getSetting("m_IndirectSpecularColor", settings));
+        this.useRadianceAmbientProbe = this.__getSetting("m_UseRadianceAmbientProbe", settings);
     }
 }
 
