@@ -15,8 +15,8 @@ class Reflection {
         this.bounces = this.__getSetting("m_ReflectionBounces", settings);
         this.intensity = this.__getSetting("m_ReflectionIntensity", settings);
 
-        let custom = this.__getSetting("m_CustomReflection", settings, { keepAsString: true});
-        this.custom = parseInt(custom.substring(9, custom.length-1));
+        let texture = this.__getSetting("m_CustomReflection", settings, { keepAsString: true});
+        this.texture = parseInt(texture.substring(9, texture.length-1));
     }
 }
 
