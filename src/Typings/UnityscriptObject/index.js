@@ -4,7 +4,7 @@ const OUT = new Soup(Object);
 const util = require('util');
 
 
-class UnityJSObject {
+class UnityscriptObject {
     constructor(obj, line) {
         Object.defineProperty(this, "__value", {
             get: () => obj,
@@ -37,5 +37,5 @@ class UnityJSObject {
 }
 
 
-OUT.push("UnityJSObject", aepl.init("UnityJSObject", UnityJSObject));
+OUT.push("UnityscriptObject", aepl.init("UnityscriptObject", UnityscriptObject));
 module.exports = OUT.pour();
