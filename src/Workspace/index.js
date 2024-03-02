@@ -8,8 +8,8 @@ const fs = require('fs');
 
 
 class UnityJSWorkspace {
-    constructor(settings) {
-        this.projectDir = settings.project; // directory for the project
+    constructor(settings={}) {
+        this.projectDir = undefined; // directory for the project
         this.events = new Soup(Object); // event list
 
 
@@ -35,7 +35,8 @@ class UnityJSWorkspace {
     }
 
 
-    open() { // opens the workspace
+    open(projectDir) { // opens the workspace
+        this.projectDir = projectDir;
         this.aliveInterval = setInterval(() => {}, 1 << 30); // keeps the process alive
         this.events.ready.fire(this, this.aliveInterval); // fires the ready event
     }
