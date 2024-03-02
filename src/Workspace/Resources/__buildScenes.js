@@ -1,4 +1,4 @@
-const { Workspace } = require('unity-js');
+const { Workspace } = require('../index.js');
 const Soup = require('@stews/soup');
 const fs = require('fs');
 
