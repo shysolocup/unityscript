@@ -19,8 +19,13 @@ class Scene {
             return s;
         });
 
-        let occlusion = stuff.filter( s => s[0].includes("OcclusionCullingSettings"))[0];
-        this.occlusionCullingSettings = new this.parent.OcclusionCullingSettings(occlusion);
+        this.occlusionCullingSetting = this.createSettingChild('OcclusionCullingSettings', stuff);
+        this.renderSettings = this.createSettingChild('RenderSettings', stuff);
+    }
+
+    createSettingChild(setting, settings) {
+        let thing = settings.filter( s => s[0].includes(setting))[0];
+        return new this.parent[setting](thing);
     }
 }
 
