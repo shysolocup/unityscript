@@ -12,14 +12,27 @@ class BaseSettings {
 
     __getSetting(setting, settings, settingSettings={}) {
         let layer = (settingSettings.layer) ? settingSettings.layer : 0
-        let raw = settings.filter( s => s.includes(setting))[layer].replace(`${setting}:`, "").trim();
+        let lines = [];
+        let line = undefined
+
+        let raw = settings.filter( (s, i) => {
+            let pass = s.includes(setting);
+            if (pass) lines.push(i);
+            return pass;
+        });
+        
+        raw = raw[layer].replace(`${setting}:`, "").trim();
         if (raw == "") raw = "undefined";
+        line = lines[layer];
 
         function runString(str) {
             return (new Function(`return ${str}`))();
         }
 
-        let stuff = (settingSettings.keepAsString) ? raw : (settingSettings.type) ? runString(`new ${type.name}(${raw})`) : runString(raw);
+        const UnityJSObject = this.parent.UnityJSObject;
+
+        let stuff = (settingSettings.keepAsString) ? new UnityJSObject( raw, line ) : (settingSettings.type) ? new UnityJSObject( runString(`new ${type.name}(${raw})`), line ) : new UnityJSObject(runString(raw));
+        if (stuff instanceof UnityJSObject) stuff.__line = line;
         return (settingSettings.callback) ? settingSettings.callback(stuff) : stuff ;
     }
 }
