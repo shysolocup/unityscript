@@ -9,6 +9,12 @@ function fromHex(hexCode, color=new Color()) {
         color.alpha = 1;
         color.hexCode = hex;
         color.hexCodeNumber = parseInt(hex.replace("#", "0x"));
+
+        color.color3 = {
+            r: color.red/255,
+            g: color.green/255,
+            b: color.blue/255,
+        };
     }
 
     if (typeof hexCode == "string") {
