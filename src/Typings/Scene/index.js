@@ -22,6 +22,7 @@ class Scene {
         this.occlusionCullingSettings = this.createSettingChild('OcclusionCullingSettings', stuff);
         this.renderSettings = this.createSettingChild('RenderSettings', stuff);
         this.lightmapSettings = this.createSettingChild('LightmapSettings', stuff);
+        this.navMeshSettings = this.createSettingChild('NavMeshSettings', stuff);
     }
 
     createSettingChild(setting, settings) {
