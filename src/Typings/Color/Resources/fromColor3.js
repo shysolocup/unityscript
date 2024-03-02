@@ -3,17 +3,17 @@ const { Color } = require('../index.js');
 
 function fromColor3(red=0, green=0, blue=0, alpha=1, color=new Color()) {
     if (red instanceof Object) {
-        green = red.g*255;
-        blue = red.b*255;
-        alpha = red.a*255;
-        red = red.r*255;
+        green = red.g;
+        blue = red.b;
+        alpha = red.a;
+        red = red.r;
     }
 
-    color.red = red*255;
-    color.green = green*255;
-    color.blue = blue*255;
+    color.red = Math.round(red*255);
+    color.green = Math.round(green*255);
+    color.blue = Math.round(blue*255);
     color.alpha = alpha;
-    color.hexCode = rgbToHex(red, green, blue);
+    color.hexCode = rgbToHex(color.red, color.green, color.blue);
     color.hexCodeNumber = parseInt(color.hexCode.replace("#", "0x"));
 
     return color;
