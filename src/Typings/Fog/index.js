@@ -10,7 +10,7 @@ class Fog {
         util.inherits(this.constructor, baseSettings.constructor);
         
         this.value = this.__getSetting("m_Fog", settings);
-        this.color = this.__getSetting("m_FogColor", settings);
+        this.color = this.parent.Color.fromColor3(this.__getSetting("m_FogColor", settings));
         this.mode = this.__getSetting("m_FogMode", settings);
         this.density = this.__getSetting("m_FogDensity", settings);
         this.linearStart = this.__getSetting("m_LinearFogStart", settings);
