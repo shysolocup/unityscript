@@ -14,7 +14,11 @@ class BaseSettings {
         let raw = settings.filter( s => s.includes(setting))[0].replace(`${setting}:`, "").trim();
         if (raw == "") raw = "undefined";
 
-        let stuff = (settingSettings.keepAsString) ? raw : (settingSettings.type) ? eval(`new ${type.name}(${raw})`) : eval(raw)
+        function outString(str) {
+            return (new Function(`return ${str};`))();
+        }
+
+        let stuff = (settingSettings.keepAsString) ? raw : (settingSettings.type) ? outString(`new ${type.name}(${raw})`) : outString(raw);
         return (settingSettings.callback) ? settingSettings.callback(stuff) : stuff ;
     }
 }
