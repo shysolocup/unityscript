@@ -4,11 +4,11 @@ const OUT = new Soup(Object);
 
 class OcclusionCullingSettings {
     constructor(settings) {
-        this.extend(this.parent.BaseSettings, settings);
-    }
+        let baseSettings = this.extend(this.parent.BaseSettings, settings);
 
-    __getSetting(setting, settings) {
-        return settings.filter( s => s.includes(setting) )[0].replace(`${setting}:`, "");
+        this.occlusionBakeSettings = new this.parent.OcclusionBakeSettings(settings, baseSettings);
+        this.sceneGUID = this.__getSetting("m_SceneGUID", settings, { keepAsString: true });
+        this.occlusionCullingData = this.__getSetting("m_OcclusionCullingData", settings);
     }
 }
 
