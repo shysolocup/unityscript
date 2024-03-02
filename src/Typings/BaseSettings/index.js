@@ -11,7 +11,8 @@ class BaseSettings {
     }
 
     __getSetting(setting, settings, settingSettings={}) {
-        let raw = settings.filter( s => s.includes(setting))[0].replace(`${setting}:`, "").trim();
+        let layer = (settingSettings.layer) ? settingSettings.layer : 0
+        let raw = settings.filter( s => s.includes(setting))[layer].replace(`${setting}:`, "").trim();
         if (raw == "") raw = "undefined";
 
         function runString(str) {
