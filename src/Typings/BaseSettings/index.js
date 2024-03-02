@@ -15,7 +15,7 @@ class BaseSettings {
         if (raw == "") raw = "undefined";
 
         function runString(str) {
-            return (new Function(`return ${str};`))();
+            return (new Function(`return ${str}`))();
         }
 
         let stuff = (settingSettings.keepAsString) ? raw : (settingSettings.type) ? runString(`new ${type.name}(${raw})`) : runString(raw);
