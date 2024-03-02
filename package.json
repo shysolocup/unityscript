@@ -1,10 +1,11 @@
 {
     "name": "unity-js",
+    "author": "paishee",
     "version": "1.0.0",
-    "description": "a js to c# compiler for unity",
+    "description": "A JavaScript-to-C# Compiler for Unity",
     "main": "src/Client/index.js",
     "dependencies": {
         "aepl": "1.4.0",
-        "stews": "2.0.2"
+        "stews": "2.0.2",
     }
 }
