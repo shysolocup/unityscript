@@ -29,10 +29,10 @@ class BaseSettings {
             return (new Function(`return ${str}`))();
         }
 
-        const UnityJSObject = this.parent.UnityJSObject;
+        const UnityscriptObject = this.parent.UnityscriptObject;
 
-        let stuff = (settingSettings.keepAsString) ? new UnityJSObject( raw, line ) : (settingSettings.type) ? new UnityJSObject( runString(`new ${type.name}(${raw})`), line ) : new UnityJSObject(runString(raw));
-        if (stuff instanceof UnityJSObject) stuff.__line = line;
+        let stuff = (settingSettings.keepAsString) ? new UnityscriptObject( raw, line ) : (settingSettings.type) ? new UnityscriptObject( runString(`new ${type.name}(${raw})`), line ) : new UnityscriptObject(runString(raw));
+        if (stuff instanceof UnityscriptObject) stuff.__line = line;
         return (settingSettings.callback) ? settingSettings.callback(stuff) : stuff ;
     }
 }
