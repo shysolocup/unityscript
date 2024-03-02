@@ -28,7 +28,7 @@ class LightmapEditorSettings {
         this.bakeBackend = this.__getSetting("m_BakeBackend", settings);
         this.pvr = new this.parent.PVR(settings, baseSettings);
         this.exportTrainingData = this.__getSetting("m_ExportTrainingData", settings);
-        this.trainingDataDestination = this.__getSetting("m_TrainingDataDestination", settings);
+        this.trainingDataDestination = this.__getSetting("m_TrainingDataDestination", settings, { keepAsString: true});
         this.lightProbeSampleCountMultiplier = this.__getSetting("m_LightProbeSampleCountMultiplier", settings);
     }
 }
