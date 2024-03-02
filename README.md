@@ -16,10 +16,10 @@ this package is currently in early access and is far from finished ⚠️
 <br>
 
 ```console
-npm i noscord.js
+npm i unityscript
 ```
 ```console
-npm i paishee/noscord.js
+npm i paishee/unityscript
 ```
 
 <br>
