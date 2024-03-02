@@ -4,7 +4,7 @@ const fs = require('fs');
 
 
 Workspace.newF("__buildScenes", function() { // function for building the workspace.scenes property
-    
+
     // a list of raw scene data files excluding meta files bc those will be used later
     let sceneFiles = fs.readdirSync(this.scenesDir).filter( file => !file.endsWith(".meta"));
 
