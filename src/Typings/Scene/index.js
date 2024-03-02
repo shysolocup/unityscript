@@ -23,6 +23,8 @@ class Scene {
         this.renderSettings = this.createSettingChild('RenderSettings', stuff);
         this.lightmapSettings = this.createSettingChild('LightmapSettings', stuff);
         this.navMeshSettings = this.createSettingChild('NavMeshSettings', stuff);
+
+        stuff.shift(); stuff.shift(); stuff.shift(); stuff.shift();
     }
 
     createSettingChild(setting, settings) {
