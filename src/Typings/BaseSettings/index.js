@@ -9,7 +9,7 @@ class BaseSettings {
     }
 
     __getSetting(setting, settings, settingSettings={}) {
-        let raw = settings.filter( s => s.includes(setting) )[0].replace(`${setting}:`, "").trim();
+        let raw = settings.filter( s => s == setting )[0].replace(`${setting}:`, "").trim();
         return (settingSettings.keepAsString) ? raw : (settingSettings.type) ? eval(`new ${type.name}(${raw})`) : eval(raw);
     }
 }
