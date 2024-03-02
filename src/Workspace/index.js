@@ -53,4 +53,13 @@ module.exports = OUT.pour();
 
 let stuff = fs.readdirSync(__dirname+"/Resources/").filter( file => file.endsWith('.js'));
 stuff.forEach( file => require(`./Resources/${file}`) );
-require('../Typings');
+
+
+const typeDir = __dirname.replace("Workspace", "Typings");
+const types = fs.readdirSync(typeDir).filter( file => file !== "index.js");
+types.forEach( res => {
+    const out = new Soup( require(`./${res}`) );
+    out.forEach( (typeName, type) => {
+        Workspace.newC(typeName, type);
+    })
+});
