@@ -12,6 +12,10 @@ class RenderSettings {
         this.skybox = new this.parent.Skybox(settings, baseSettings);
         this.halo = new this.parent.Halo(settings, baseSettings);
         this.flare = new this.parent.Flare(settings, baseSettings);
+
+        let spotCookie = this.__getSetting("m_SpotCookie", settings, { keepAsString: true});
+        spotCookie = spotCookie.substring(1, spotCookie.length-1)
+        this.spotCookie = new this.parent.SpotCookie(spotCookie.split(", "), baseSettings);
     }
 }
 
