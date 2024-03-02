@@ -7,7 +7,7 @@ const fs = require('fs');
 
 
 
-class UnityJSWorkspace {
+class UnityscriptWorkspace {
     constructor(settings={}) {
         
         // directories
@@ -47,7 +47,7 @@ class UnityJSWorkspace {
 
 
 
-OUT.push("Workspace", aepl.init("Workspace", UnityJSWorkspace) );
+OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
 module.exports = OUT.pour();
 
 
