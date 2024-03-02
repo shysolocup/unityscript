@@ -16,6 +16,12 @@ function fromRGBA(red=0, green=0, blue=0, alpha=1, color=new Color()) {
     color.hexCode = rgbToHex(red, green, blue);
     color.hexCodeNumber = parseInt(color.hexCode.replace("#", "0x"));
 
+    color.color3 = {
+        r: color.red/255,
+        g: color.green/255,
+        b: color.blue/255,
+    };
+
     return color;
 }
 
