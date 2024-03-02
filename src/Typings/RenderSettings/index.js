@@ -11,6 +11,7 @@ class RenderSettings {
         this.subtractiveShadowColor = this.__getSetting("m_SubtractiveShadowColor", settings);
         this.skybox = new this.parent.Skybox(settings, baseSettings);
         this.halo = new this.parent.Halo(settings, baseSettings);
+        this.flare = new this.parent.Flare(settings, baseSettings);
     }
 }
 
