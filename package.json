@@ -21,7 +21,7 @@
     "keywords": [
         "unity",
         "aepl",
-        "stews",
+        "stews"
     ],
     "homepage": "https://github.com/paishee/unity-js",
     "main": "src/Workspace/index.js"
