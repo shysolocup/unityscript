@@ -14,11 +14,11 @@ class BaseSettings {
         let raw = settings.filter( s => s.includes(setting))[0].replace(`${setting}:`, "").trim();
         if (raw == "") raw = "undefined";
 
-        function outString(str) {
+        function runString(str) {
             return (new Function(`return ${str};`))();
         }
 
-        let stuff = (settingSettings.keepAsString) ? raw : (settingSettings.type) ? outString(`new ${type.name}(${raw})`) : outString(raw);
+        let stuff = (settingSettings.keepAsString) ? raw : (settingSettings.type) ? runString(`new ${type.name}(${raw})`) : runString(raw);
         return (settingSettings.callback) ? settingSettings.callback(stuff) : stuff ;
     }
 }
