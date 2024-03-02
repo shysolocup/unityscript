@@ -16,6 +16,12 @@ function fromColor3(red=0, green=0, blue=0, alpha=1, color=new Color()) {
     color.hexCode = rgbToHex(color.red, color.green, color.blue);
     color.hexCodeNumber = parseInt(color.hexCode.replace("#", "0x"));
 
+    color.color3 = {
+        r: color.red,
+        g: color.green,
+        b: color.blue,
+    };
+
     return color;
 }
 
