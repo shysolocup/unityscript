@@ -1,11 +1,28 @@
 {
     "name": "unity-js",
+    "version": "0.0.1",
     "author": "paishee",
-    "version": "1.0.0",
     "description": "A JavaScript-to-C# Compiler for Unity",
-    "main": "src/Client/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/paishee/unity-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/paishee/unity-js/issues"
+    },
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/paishee/unity-js/blob/main/LICENSE"
+    },
     "dependencies": {
-        "aepl": "1.4.0",
-        "stews": "2.0.2",
-    }
+        "stews": "latest",
+        "aepl": "latest"
+    },
+    "keywords": [
+        "unity",
+        "aepl",
+        "stews",
+    ],
+    "homepage": "https://github.com/paishee/unity-js",
+    "main": "src/Workspace/index.js"
 }
