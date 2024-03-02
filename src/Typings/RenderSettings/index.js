@@ -19,8 +19,8 @@ class RenderSettings {
 
         this.reflection = new this.parent.Reflection(settings, baseSettings);
         
-        let sun = this.__getSetting("m_Sun", settings, { keepAsString: true});
-        this.sunFile = parseInt(sun.substring(9, sun.length-1))
+        let sunTexture = this.__getSetting("m_Sun", settings, { keepAsString: true});
+        this.sunTexture = parseInt(sunTexture.substring(9, sunTexture.length-1))
     }
 }
 
