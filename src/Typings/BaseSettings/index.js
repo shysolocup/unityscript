@@ -4,13 +4,13 @@ const OUT = new Soup(Object);
 
 class BaseSettings {
     constructor(settings) {
-        this.flags = this.__getSetting("m_ObjectHideFlags", settings);
-        console.log(this.flags);
-        // this.version = settings.filter( s => s.includes("m_serializedVersion") )[0];
+        this.objectHideFlags = this.__getSetting("m_ObjectHideFlags", settings);
+        this.serializedVersion = this.__getSetting("serializedVersion", settings);
     }
 
     __getSetting(setting, settings) {
-        return settings.filter( s => s.includes(setting) )[0].replace(`${setting}:`, "");
+        let raw = settings.filter( s => s.includes(setting) )[0].replace(`${setting}:`, "");
+        return eval(raw);
     }
 }
 
