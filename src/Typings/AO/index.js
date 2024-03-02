@@ -10,8 +10,8 @@ class AO {
         
         this.value = this.__getSetting("m_AO", settings);
         this.maxDistance = this.__getSetting("m_AOMaxDistance", settings);
-        this.compAOExponent = this.__getSetting("m_CompAOExponent", settings);
-        this.compAOExponentDirect = this.__getSetting("m_CompAOExponentDirect", settings);
+        this.compExponent = this.__getSetting("m_CompAOExponent", settings);
+        this.compExponentDirect = this.__getSetting("m_CompAOExponentDirect", settings);
     }
 }
 
