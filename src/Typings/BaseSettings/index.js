@@ -8,9 +8,9 @@ class BaseSettings {
         this.serializedVersion = this.__getSetting("serializedVersion", settings);
     }
 
-    __getSetting(setting, settings) {
-        let raw = settings.filter( s => s.includes(setting) )[0].replace(`${setting}:`, "");
-        return eval(raw);
+    __getSetting(setting, settings, settingSettings={}) {
+        let raw = settings.filter( s => s.includes(setting) )[0].replace(`${setting}:`, "").trim();
+        return (settingSettings.keepAsString) ? raw : (settingSettings.type) ? eval(`new ${type.name}(${raw})`) : eval(raw);
     }
 }
 
