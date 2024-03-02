@@ -5,4 +5,4 @@
 <a href="https://github.com/paishee/unityscript/wiki"><img height=22 src="https://img.shields.io/badge/documentation-blue?style=flat&color=purple&logo=github&logoColor=white" alt="documentation" />
 <img height=22 src="https://github.com/paishee/unityscript/actions/workflows/publish.yml/badge.svg" alt="publish">
 
-UnityScript is a JavaScript to C# compiler and API wrapper for the game engine Unity<br>
+UnityScript is a JavaScript to C# compiler and API wrapper for the game engine Unity and powered by Aepl<br>
