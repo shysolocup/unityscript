@@ -9,8 +9,18 @@ const fs = require('fs');
 
 class UnityJSWorkspace {
     constructor(settings={}) {
+        
+        // directories
         this.projectDir = undefined; // directory for the project
-        this.events = new Soup(Object); // event list
+        this.assetsDir = undefined; // directory for the project's assets
+        this.scenesDir = undefined; // directory for the project's scenes
+        this.scriptsDir = undefined; // directory for the project's scripts
+
+
+        // groups
+        this.events = new this.EventGroup; // event list
+        this.scenes = new this.SceneGroup; // scene list
+        this.scripts = new this.ScriptGroup; // script list
 
 
         // base client events
@@ -19,26 +29,19 @@ class UnityJSWorkspace {
             
             // workspace events with multiple names
             if (ev instanceof Array) {
-                const event = new this.Event()
-                ev.forEach(miniEv => this.events.push( miniEv, new Typings.Event() ) );
+                let event = new this.Event
+                ev.forEach(miniEv => this.events.push( miniEv, event ) );
             }
 
             // workspace events with one name
             else if (typeof ev == "string") {
-                const event = new this.Event();
+                let event = new this.Event;
                 this.events.push(ev, event);
             }
         });
 
 
         // fs.readdirSync(this.project);
-    }
-
-
-    open(projectDir) { // opens the workspace
-        this.projectDir = projectDir;
-        this.aliveInterval = setInterval(() => {}, 1 << 30); // keeps the process alive
-        this.events.ready.fire(this, this.aliveInterval); // fires the ready event
     }
 }
 
