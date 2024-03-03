@@ -2,7 +2,7 @@ const { Workspace } = require('../index.js');
 
 
 Workspace.newF("__formSettings", function(cl, settings) {
-    let fixSettings = Soup.from(settings);
+    let fixSettings = Soup.from(settings); // turn to soup for better formatting
 
     // translate something like m_OcclusionBakeSettings to occlusionBakeSettings
     fixSettings = fixSettings.mapKeys( (k, v) => {
