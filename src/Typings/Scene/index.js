@@ -1,6 +1,7 @@
 const Soup = require('@stews/soup');
 const aepl = require('aepl');
 const OUT = new Soup(Object);
+const yaml = require('js-yaml');
 
 
 class Scene {
@@ -19,17 +20,19 @@ class Scene {
             return s;
         });
 
+
         this.occlusionCullingSettings = this.createSettingChild('OcclusionCullingSettings', stuff);
         this.renderSettings = this.createSettingChild('RenderSettings', stuff);
         this.lightmapSettings = this.createSettingChild('LightmapSettings', stuff);
-        this.navMeshSettings = this.createSettingChild('NavMeshSettings', stuff);
+        this.NavMeshSettings = this.createSettingChild('NavMeshSettings', stuff);
 
         stuff.shift(); stuff.shift(); stuff.shift(); stuff.shift();
     }
 
     createSettingChild(setting, settings) {
         let thing = settings.filter( s => s[0].includes(setting))[0];
-        return new this.parent[setting](thing);
+        let stuff = yaml.load(thing.join("\n"));
+        return new this.parent[setting](stuff[setting]);
     }
 }
 
