@@ -35,11 +35,9 @@ const workspace = new Workspace();
 
 workspace.on("ready", (ctx) => {
     const scene = ctx.scenes.first();
-    const object = scene.objects.last();
 
     scene.create("Cube", {
-        localPosition: object.localPosition,
-        localRotation: object.localRotation
+        localPosition: { x: 5, y: 5, z: 5 },
     });
 });
 
