@@ -41,14 +41,14 @@ class Scene {
         
         stuff.forEach( (s, i) => {
             let name = s[0].replace(":", "");
-            let { eid } = ids[i];
+            let { fileID } = ids[i];
             try {
                 let obj = this.__createChild(name, stuff);
                 
-                if (obj instanceof this.parent.GameObject) { this.objects.push(eid, obj); }
-                if (obj instanceof this.parent.Light) { this.lights.push(eid, obj); }
+                if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); }
+                if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
 
-                this.children.push(eid, obj);
+                this.children.push(fileID, obj);
             } catch(e) {}
 
         })
