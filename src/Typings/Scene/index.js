@@ -1,7 +1,7 @@
 const Soup = require('@stews/soup');
 const aepl = require('aepl');
 const OUT = new Soup(Object);
-const yaml = require('js-yaml');
+const fs = require('fs');
 
 
 class Scene {
@@ -11,68 +11,13 @@ class Scene {
         this.lights = new this.parent.SceneLightGroup;
         this.settings = new Soup(Object);
     }
-
-
-    spawn(type, name, properties={}) {
-        
-    }
-
-    translate(data, meta) {
-        Object.assign(this, yaml.load(meta));
-
-        let stuff = data.split("--- !u");
-        stuff.shift();
-
-        let ids = [];
-
-        stuff = stuff.map( s => {
-            s = s.split(/(\r\n|\n|\r)/gm);
-            let id = s.shift();
-            let eid = parseInt(id.split(" ")[0].replace("!", ""));
-            let fileID = parseInt(id.split(" ")[1].replace("&", ""));
-            ids.push({ id: id, eid: eid, fileID: fileID});
-            s = s.filter( thing => !(thing == "\r\n") );
-            return s;
-        });
-
-
-        this.occlusionCullingSettings = this.__createChild('OcclusionCullingSettings', stuff);
-        this.renderSettings = this.__createChild('RenderSettings', stuff);
-        this.lightmapSettings = this.__createChild('LightmapSettings', stuff);
-        this.navMeshSettings = this.__createChild('NavMeshSettings', stuff);
-
-
-        this.settings.push("occlusionCulling", this.occlusionCullingSettings);
-        this.settings.push("rendering", this.renderSettings);
-        this.settings.push("lightmap", this.lightmapSettings);
-        this.settings.push("navMesh", this.navMeshSettings);
-
-
-        stuff.shift(); stuff.shift(); stuff.shift(); stuff.shift();
-        ids.shift(); ids.shift(); ids.shift(); ids.shift();
-        
-        stuff.forEach( (s, i) => {
-            let name = s[0].replace(":", "");
-            let { fileID } = ids[i];
-            try {
-                let obj = this.__createChild(name, stuff);
-                
-                if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); this.parent.objects.push(fileID, obj); }
-                if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
-
-                this.children.push(fileID, obj);
-            } catch(e) {}
-
-        })
-    }
-
-    __createChild(name, settings) {
-        let thing = settings.filter( s => s[0].includes(name))[0];
-        let stuff = yaml.load(thing.join("\n"));
-        return new this.parent[name](stuff[name]);
-    }
 }
 
 
 OUT.push("Scene", aepl.init("Scene", Scene));
 module.exports = OUT.pour();
+
+let resFiles = fs.readdirSync(__dirname+"/Resources").filter( file => file.endsWith(".js"));
+resFiles.forEach( file => {
+    require('./Resources/'+file);
+});
