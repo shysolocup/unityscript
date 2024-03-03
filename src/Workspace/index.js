@@ -78,6 +78,7 @@ stuff.forEach( file => require(`./Resources/${file}`) );
 // building types
 const typeDir = __dirname.replace("Workspace", "Typings");
 const types = fs.readdirSync(typeDir).filter( file => file !== "index.js");
+
 types.forEach( res => {
     const out = new Soup( require(`../Typings/${res}`) );
     out.forEach( (typeName, type) => {
