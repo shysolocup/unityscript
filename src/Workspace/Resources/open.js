@@ -11,7 +11,10 @@ Workspace.newF("open", function(projectDir) { // function for opening the worksp
     // alive interval
     this.aliveInterval = setInterval(() => {}, 1 << 30); // keeps the process alive
 
-    // event firing
+    // building
     this.__buildScenes();
+    this.__buildScripts();
+
+    // event firing
     this.events.ready.fire(this, this.aliveInterval); // fires the ready event
 });
