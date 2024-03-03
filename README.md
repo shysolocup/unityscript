@@ -36,7 +36,7 @@ const workspace = new Workspace();
 workspace.on("ready", (ctx) => {
     const scene = ctx.scenes.first();
 
-    scene.create("Cube", {
+    let cube = scene.create("Cube", {
         localPosition: { x: 5, y: 5, z: 5 },
     });
 });
