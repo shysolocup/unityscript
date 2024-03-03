@@ -11,6 +11,12 @@ class SceneChildGroup extends Soup {
     create(name, properties) {
         
     }
+
+    sift(callback) {
+        for (let [k, obj] of this) {
+            if (callback(obj)) return obj;
+        }
+    }
 }
 
 
