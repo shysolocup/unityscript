@@ -8,7 +8,7 @@ class LightmapSettings {
         let fixedSettings = this.parent.__formSettings(this, settings);
         this.extend(this.parent.BaseSettings, fixedSettings);
 
-        this.lightmapEditorSettings = new this.parent.LightmapEditorSettings(fixedSettings.LightmapEditorSettings);
+        this.lightmapEditorSettings = new this.parent.LightmapEditorSettings(fixedSettings.lightmapEditorSettings);
     }
 }
 
