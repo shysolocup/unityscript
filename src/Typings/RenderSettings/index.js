@@ -4,26 +4,17 @@ const OUT = new Soup(Object);
 
 class RenderSettings {
     constructor(settings) {
-        let baseSettings = this.extend(this.parent.BaseSettings, settings);
+        let fixedSettings = this.parent.__formSettings(this, settings);
+        this.extend(this.parent.BaseSettings, fixedSettings);
 
-        this.fog = new this.parent.Fog(settings, baseSettings);
-        this.ambient = new this.parent.Ambient(settings, baseSettings);
-        this.subtractiveShadowColor = this.__getSetting("m_SubtractiveShadowColor", settings);
-        this.skybox = new this.parent.Skybox(settings, baseSettings);
-        this.halo = new this.parent.Halo(settings, baseSettings);
-        this.flare = new this.parent.Flare(settings, baseSettings);
+        let fromColor3 = this.parent.Color.fromColor3;
 
-        let spotCookie = this.__getSetting("m_SpotCookie", settings, { keepAsString: true});
-        spotCookie = spotCookie.substring(1, spotCookie.length-1);
-        this.spotCookie = new this.parent.SpotCookie(spotCookie.split(", "), baseSettings);
-
-        this.reflection = new this.parent.Reflection(settings, baseSettings);
-        
-        let sunTexture = this.__getSetting("m_Sun", settings, { keepAsString: true});
-        this.sunTexture = parseInt(sunTexture.substring(9, sunTexture.length-1));
-
-        this.indirectSpecularColor = this.parent.Color.fromColor3(this.__getSetting("m_IndirectSpecularColor", settings));
-        this.useRadianceAmbientProbe = this.__getSetting("m_UseRadianceAmbientProbe", settings);
+        this.ambientEquatorColor = fromColor3(this.ambientEquatorColor);
+        this.ambientGroundColor = fromColor3(this.ambientGroundColor);
+        this.ambientSkyColor = fromColor3(this.ambientSkyColor);
+        this.fogColor = fromColor3(this.fogColor);
+        this.indirectSpecularColor = fromColor3(this.indirectSpecularColor);
+        this.subtractiveShadowColor = fromColor3(this.subtractiveShadowColor);
     }
 }
 
