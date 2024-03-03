@@ -4,7 +4,7 @@
 
 <a href="https://www.npmjs.com/package/unityscript"><img height=22 src="https://img.shields.io/npm/v/unityscript?style=flat&color=gold&logo=npm&logoColor=white" alt="version" />
 <a href="https://www.npmjs.com/package/unityscript"><img height=22 src="https://img.shields.io/npm/dt/unityscript?style=flat&color=plum&logo=docusign&logoColor=white" alt="downloads" />
-<a href="https://npmjs.com/package/aepl"><img src="https://img.shields.io/badge/powered%20by-aepl-a?color=crimson&logo=npm&logoColor=white" alt="powered by aepl" /></a>
+<a href="https://npmjs.com/package/aepl"><img src="https://img.shields.io/badge/powered%20by-aepl-a?color=tomato&logo=npm&logoColor=white" alt="powered by aepl" /></a>
 <a href="https://github.com/paishee/unityscript/wiki"><img height=22 src="https://img.shields.io/badge/documentation-blue?style=flat&color=black&logo=github&logoColor=white" alt="documentation" />
 <img height=22 src="https://github.com/paishee/unityscript/actions/workflows/publish.yml/badge.svg" alt="publish">
 
