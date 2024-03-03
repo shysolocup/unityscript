@@ -9,6 +9,7 @@ class Scene {
         this.children = new this.parent.SceneChildGroup;
         this.objects = new this.parent.SceneGameObjectGroup;
         this.lights = new this.parent.SceneLightGroup;
+        this.cameras = new this.parent.SceneCameraGroup;
         this.settings = new Soup(Object);
     }
 }
