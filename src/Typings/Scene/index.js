@@ -9,6 +9,7 @@ class Scene {
         this.children = new this.parent.SceneChildGroup;
         this.objects = new this.parent.SceneGameObjectGroup;
         this.lights = new this.parent.SceneLightGroup;
+        this.settings = new Soup(Object);
     }
 
     translate(data, meta) {
@@ -34,6 +35,12 @@ class Scene {
         this.renderSettings = this.__createChild('RenderSettings', stuff);
         this.lightmapSettings = this.__createChild('LightmapSettings', stuff);
         this.navMeshSettings = this.__createChild('NavMeshSettings', stuff);
+
+
+        this.settings.push("occlusionCulling", this.occlusionCullingSettings);
+        this.settings.push("rendering", this.renderSettings);
+        this.settings.push("lightmap", this.lightmapSettings);
+        this.settings.push("navMesh", this.navMeshSettings);
 
 
         stuff.shift(); stuff.shift(); stuff.shift(); stuff.shift();
