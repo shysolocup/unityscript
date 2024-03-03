@@ -4,12 +4,10 @@ const OUT = new Soup(Object);
 
 class NavMeshSettings {
     constructor(settings) {
-        let baseSettings = this.extend(this.parent.BaseSettings, settings);
+        let fixedSettings = this.parent.__formSettings(this, settings);
+        this.extend(this.parent.BaseSettings, fixedSettings);
 
-        this.buildSettings = new this.parent.BuildSettings(settings, baseSettings);
-
-        let data = this.__getSetting("m_NavMeshData", settings, { keepAsString: true });
-        this.navMeshData = parseInt(data.substring(9, data.length-1));
+        this.buildSettings = new this.parent.BuildSettings(fixedSettings.buildSettings);
     }
 }
 
