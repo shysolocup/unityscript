@@ -4,9 +4,6 @@ const aepl = require('aepl');
 const Soup = require('@stews/soup');
 const fs = require('fs');
 
-// stuff going OUT of the module
-const OUT = new Soup(Object);
-
 
 
 
@@ -52,6 +49,7 @@ class UnityscriptWorkspace {
 
 
 // exporting out stuff
+const OUT = new Soup(Object);
 OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
 OUT.push("Typings", new Soup(Object));
 module.exports = OUT.pour();
