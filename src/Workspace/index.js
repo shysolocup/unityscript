@@ -2,8 +2,12 @@
 // modules
 const aepl = require('aepl');
 const Soup = require('@stews/soup');
-const OUT = new Soup(Object);
 const fs = require('fs');
+
+
+
+// stuff going OUT of the module
+const OUT = new Soup(Object);
 
 
 
