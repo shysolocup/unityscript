@@ -4,10 +4,9 @@ const aepl = require('aepl');
 const Soup = require('@stews/soup');
 const fs = require('fs');
 
-
-
 // stuff going OUT of the module
 const OUT = new Soup(Object);
+
 
 
 
@@ -51,15 +50,21 @@ class UnityscriptWorkspace {
 
 
 
+
+// exporting out stuff
 OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
 OUT.push("Typings", new Soup(Object));
 module.exports = OUT.pour();
 
 
+
+// building resources
 let stuff = fs.readdirSync(__dirname+"/Resources/").filter( file => file.endsWith('.js'));
 stuff.forEach( file => require(`./Resources/${file}`) );
 
 
+
+// building types
 const typeDir = __dirname.replace("Workspace", "Typings");
 const types = fs.readdirSync(typeDir).filter( file => file !== "index.js");
 types.forEach( res => {
