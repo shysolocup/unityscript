@@ -16,7 +16,8 @@
     },
     "dependencies": {
         "stews": "latest",
-        "aepl": "latest"
+        "aepl": "latest",
+        "js-yaml": "latest"
     },
     "keywords": [
         "unity",
