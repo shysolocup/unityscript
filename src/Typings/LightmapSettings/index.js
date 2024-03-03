@@ -5,12 +5,10 @@ const OUT = new Soup(Object);
 
 class LightmapSettings {
     constructor(settings) {
-        let baseSettings = this.extend(this.parent.BaseSettings, settings);
+        let fixedSettings = this.parent.__formSettings(this, settings);
+        this.extend(this.parent.BaseSettings, fixedSettings);
 
-        this.GIWorkflowMode = this.__getSetting("m_GIWorkflowMode", settings);
-        this.GISettings = new this.parent.GISettings(settings, baseSettings);
-        this.lightmapEditorSettings = new this.parent.LightmapEditorSettings(settings, baseSettings);
-        this.lighting = new this.parent.Lighting(settings, baseSettings);
+        this.lightmapEditorSettings = new this.parent.BuildSettings(fixedSettings.LightmapEditorSettings);
     }
 }
 
