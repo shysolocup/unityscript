@@ -1,6 +1,6 @@
 {
     "name": "unityscript",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": "paishee",
     "description": "A JavaScript-to-C# Compiler for Unity",
     "repository": {
