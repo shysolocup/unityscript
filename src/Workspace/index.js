@@ -34,6 +34,7 @@ class UnityscriptWorkspace {
         this.events = new this.EventGroup; // event list
         this.scenes = new this.SceneGroup; // scene list
         this.scripts = new this.ScriptGroup; // script list
+        this.objects = new this.GameObjectGroup; // object list
 
 
         // base client events
