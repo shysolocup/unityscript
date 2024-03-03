@@ -6,7 +6,7 @@ const util = require('util');
 
 class BuildSettings {
     constructor(settings) {
-        this.parent.__formSettings(this, settings);
+        this.parent.__formSettings(this, settings.__value);
     }
 }
 
