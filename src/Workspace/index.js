@@ -1,3 +1,16 @@
+/*
+	--< UnityScript >--
+	:: created by @paishee using ::
+	- stews: https://github.com/paishee/stews
+    - aepl: https://github.com/paishee/aepl
+    - js-yaml: https://github.com/nodeca/js-yaml
+
+    https://github.com/paishee/unityscript
+
+*/
+
+
+
 
 // modules
 const aepl = require('aepl');
