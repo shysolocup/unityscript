@@ -5,16 +5,16 @@ const util = require('util');
 
 
 class UnityscriptObject {
-    constructor(obj, line) {
+    constructor(name, obj) {
         Object.defineProperty(this, "__value", {
             get: () => obj,
             set: (value) => obj = value,
             configurable: true
         });
 
-        Object.defineProperty(this, "__line", {
-            get: () => line,
-            set: (value) => line = value,
+        Object.defineProperty(this, "__name", {
+            get: () => name,
+            set: (value) => name = value,
             configurable: true
         })
 
