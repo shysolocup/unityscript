@@ -15,6 +15,8 @@ class Camera {
             also if you do please @ me @paishee on discord or make an issue on the github https://github.com/paishee/unityscript/issues
             thanks
         */
+
+        this.backgroundColor = this.parent.Color.fromColor3(fixedSettings.backGroundColor.__value);
         this.cullingMask = new this.parent.CullingMask(fixedSettings.cullingMask.__value);
     }
 }
