@@ -6,7 +6,7 @@ class OcclusionCullingSettings {
     constructor(settings) {
         let fixedSettings = this.parent.__formSettings(this, settings);
         this.extend(this.parent.BaseSettings, fixedSettings);
-        this.occlusionBakeSettings = new this.parent.OcclusionBakeSettings(fixedSettings.OcclusionBakeSettings);
+        this.occlusionBakeSettings = new this.parent.OcclusionBakeSettings(fixedSettings.occlusionBakeSettings);
     }
 }
 
