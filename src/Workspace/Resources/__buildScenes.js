@@ -15,6 +15,7 @@ Workspace.newF("__buildScenes", function() { // function for building the worksp
         let name = file.replace(".unity", ""); // name of the scene
         const scene = new this.Scene(name); // creates a new Scene type
 
+        
         // sets the directory properties
         scene.dataDir = this.scenesDir+"/"+file
         scene.metaDir = scene.dataDir+".meta";
