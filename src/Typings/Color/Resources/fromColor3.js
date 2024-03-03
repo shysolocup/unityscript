@@ -9,17 +9,17 @@ function fromColor3(red=0, green=0, blue=0, alpha=1, color=new Color()) {
         red = red.r;
     }
 
-    color.red = Math.round(red*255);
-    color.green = Math.round(green*255);
-    color.blue = Math.round(blue*255);
+    color.red = red*255;
+    color.green = green*255;
+    color.blue = blue*255;
     color.alpha = alpha;
     color.hexCode = rgbToHex(color.red, color.green, color.blue);
     color.hexCodeNumber = parseInt(color.hexCode.replace("#", "0x"));
 
     color.color3 = {
-        r: color.red,
-        g: color.green,
-        b: color.blue,
+        r: red,
+        g: green,
+        b: blue,
     };
 
     return color;
