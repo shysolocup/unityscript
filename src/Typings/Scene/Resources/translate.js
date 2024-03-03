@@ -44,22 +44,26 @@ Scene.newF("translate", function(data, meta) {
     ids.shift(); ids.shift(); ids.shift(); ids.shift();
     
 
+    // removes more whitespace :skull:
+    stuff = stuff.map( s => s.filter( miniStuff => {
+        return miniStuff.replace(/(\r\n|\n|\r)/gm, "").replace(/\s/, "").length > 1
+    }));
+
+
     // nvm more messy
     stuff.forEach( (s, i) => {
         let name = s[0].replace(":", ""); // removes the : from the name of the property
         let { fileID } = ids[i]; // gets the file id
         if (this.parent[name]) {
-            try {
-                let obj = this.__createChild(name, stuff); // creates a new child obj
-                
-                // this part is mostly just for like making sure that objects get put in Scene.objects and UnityscriptWorkspace.objects
-                if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); this.parent.objects.push(fileID, obj); }
-                if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
-                if (obj instanceof this.parent.Camera) { this.cameras.push(fileID, obj); }
+            let obj = this.__createChild(name, stuff); // creates a new child obj
+            
+            // this part is mostly just for like making sure that objects get put in Scene.objects and UnityscriptWorkspace.objects
+            if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); this.parent.objects.push(fileID, obj); }
+            if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
+            if (obj instanceof this.parent.Camera) { this.cameras.push(fileID, obj); }
 
-                // finally adds it to the children
-                this.children.push(fileID, obj);
-            } catch(e) {}
+            // finally adds it to the children
+            this.children.push(fileID, obj);
         }
     });
 })
