@@ -9,7 +9,7 @@ class SceneGroup extends Soup {
         super(Object);
     }
 
-    spawn(name, properties) {
+    create(name, properties) {
         
     }
 }
