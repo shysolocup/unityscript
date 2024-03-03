@@ -10,7 +10,7 @@ Workspace.newF("__buildScripts", function() { // function for building the works
 
 
     scriptFiles.forEach( file => {
-        let name = file.replace(".unity", ""); // name of the script
+        let name = file.replace(".cs", ""); // name of the script
         const script = new this.Script(name); // creates a new script typing
 
         let data = fs.readFileSync(`${this.scriptsDir}/${file}`, 'utf8'); // script data
