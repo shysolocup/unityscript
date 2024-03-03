@@ -3,7 +3,7 @@ const aepl = require('aepl');
 const OUT = new Soup(Object);
 
 
-class GameObjectGroup extends Soup {
+class SceneChildGroup extends Soup {
     constructor() {
         super(Object);
     }
@@ -14,5 +14,5 @@ class GameObjectGroup extends Soup {
 }
 
 
-OUT.push("GameObjectGroup", aepl.init("GameObjectGroup", GameObjectGroup));
+OUT.push("SceneChildGroup", aepl.init("SceneChildGroup", SceneChildGroup));
 module.exports = OUT.pour();
