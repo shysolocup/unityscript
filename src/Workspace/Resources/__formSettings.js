@@ -13,7 +13,7 @@ Workspace.newF("__formSettings", function(cl, settings) {
     });
 
     // turn everything into unityscript objects
-    fixSettings.map( (k, v, i) => {
+    fixSettings = fixSettings.map( (k, v, i) => {
         return new cl.parent.UnityscriptObject(k, v);
     });
 
