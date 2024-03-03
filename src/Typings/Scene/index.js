@@ -10,6 +10,8 @@ class Scene {
     }
 
     translate(data, meta) {
+        Object.assign(this, yaml.load(meta));
+
         let stuff = data.split("--- !u");
         stuff.shift();
 
