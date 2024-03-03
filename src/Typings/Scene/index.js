@@ -12,6 +12,11 @@ class Scene {
         this.settings = new Soup(Object);
     }
 
+
+    spawn(type, name, properties) {
+        
+    }
+
     translate(data, meta) {
         Object.assign(this, yaml.load(meta));
 
