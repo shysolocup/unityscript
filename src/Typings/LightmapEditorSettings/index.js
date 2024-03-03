@@ -5,7 +5,7 @@ const OUT = new Soup(Object);
 
 class LightmapEditorSettings {
     constructor(settings) {
-        this.parent.__formSettings(this, settings);
+        this.parent.__formSettings(this, settings.__value);
     }
 }
 
