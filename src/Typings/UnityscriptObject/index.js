@@ -32,7 +32,7 @@ class UnityscriptObject {
     }
 
     [util.inspect.custom]() {
-        return `UnityJSObject { ${util.inspect(this.__value, { colors: true })} }`;
+        return util.inspect( this.__value, { colors: true } );
     }
 }
 
