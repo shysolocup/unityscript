@@ -23,7 +23,23 @@ class UnityscriptObject {
                 if (obj[prop]) return obj[prop];
                 else if (target[prop]) return target[prop];
                 else return false;
-            }
+            },
+
+            set(target, prop, value) {
+                if (obj[prop]) { return obj[prop] = value;
+                    // eventually actual stuff for editing the scene's .unity file will probably be here so it actually applies updates
+                }
+                else if (target[prop]) return target[prop] = value;
+                else obj[prop] = value;
+            },
+
+            deleteProperty(target, prop) {
+                if (obj[prop]) { return delete obj[prop];
+                    // eventually actual stuff for editing the scene's .unity file will probably be here so it actually applies updates
+                }
+                else if (target[prop]) return delete target[prop];
+                else return delete obj[prop];
+            },
         })
     }
 
