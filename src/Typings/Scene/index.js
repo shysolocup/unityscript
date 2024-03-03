@@ -13,7 +13,7 @@ class Scene {
     }
 
 
-    spawn(type, name, properties) {
+    spawn(type, name, properties={}) {
         
     }
 
