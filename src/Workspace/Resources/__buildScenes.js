@@ -13,6 +13,10 @@ Workspace.newF("__buildScenes", function() { // function for building the worksp
         let name = file.replace(".unity", ""); // name of the scene
         const scene = new this.Scene(name); // creates a new scene typing
 
+        // sets the directory properties
+        scene.dataDir = this.scenesDir+"/"+file
+        scene.metaDir = scene.dataDir+".meta";
+
         let data = fs.readFileSync(`${this.scenesDir}/${file}`, 'utf8'); // scene data
         let meta = fs.readFileSync(`${this.scenesDir}/${file}.meta`, 'utf8'); // scene metadata
 
