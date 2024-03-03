@@ -16,7 +16,15 @@ class UnityscriptObject {
             get: () => name,
             set: (value) => name = value,
             configurable: true
-        })
+        });
+
+        this[util.inspect.custom] = function() {
+            try {
+                return util.inspect( this.__value, { colors: true } );
+            } catch(e) {
+                return util.inspect( obj, { colors: true } );
+            }
+        }
 
         return new Proxy(this, {
             get(target, prop) {
@@ -45,10 +53,6 @@ class UnityscriptObject {
 
     [Symbol.toPrimitive](hint) {
         return this.__value;
-    }
-
-    [util.inspect.custom]() {
-        return util.inspect( this.__value, { colors: true } );
     }
 }
 
