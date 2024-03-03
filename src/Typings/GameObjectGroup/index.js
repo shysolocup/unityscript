@@ -8,7 +8,7 @@ class GameObjectGroup extends Soup {
         super(Object);
     }
 
-    create(name, properties) {
+    spawn(name, properties) {
         
     }
 
