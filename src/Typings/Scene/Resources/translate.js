@@ -54,6 +54,7 @@ Scene.newF("translate", function(data, meta) {
             // this part is mostly just for like making sure that objects get put in Scene.objects and UnityscriptWorkspace.objects
             if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); this.parent.objects.push(fileID, obj); }
             if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
+            if (obj instanceof this.parent.Camera) { this.cameras.push(fileID, obj); }
 
             // finally adds it to the children
             this.children.push(fileID, obj);
