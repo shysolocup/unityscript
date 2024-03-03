@@ -48,6 +48,7 @@ class UnityscriptWorkspace {
 
 
 OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
+OUT.push("Typings", new Soup(Object));
 module.exports = OUT.pour();
 
 
@@ -60,6 +61,7 @@ const types = fs.readdirSync(typeDir).filter( file => file !== "index.js");
 types.forEach( res => {
     const out = new Soup( require(`../Typings/${res}`) );
     out.forEach( (typeName, type) => {
+        OUT.Typings.push(typeName, type);
         Workspace.newC(typeName, type);
     })
 });
