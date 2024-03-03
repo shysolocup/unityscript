@@ -7,6 +7,7 @@ class OcclusionCullingSettings {
         let fixedSettings = this.parent.__formSettings(this, settings);
         this.extend(this.parent.BaseSettings, fixedSettings);
         this.occlusionBakeSettings = new this.parent.OcclusionBakeSettings(fixedSettings.occlusionBakeSettings);
+        this.sceneGUID = (!this.sceneGUID) ? 0 : this.sceneGUID;
     }
 }
 
