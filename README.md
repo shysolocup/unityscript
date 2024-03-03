@@ -16,10 +16,10 @@ this package is currently in early access and is far from finished ⚠️
 <br>
 
 ```console
-npm i unityscript
+npm install unityscript
 ```
 ```console
-npm i paishee/unityscript
+npm install paishee/unityscript
 ```
 
 <br>
@@ -35,9 +35,11 @@ const workspace = new Workspace();
 
 workspace.on("ready", (ctx) => {
     const scene = ctx.scenes.first();
+    const object = scene.objects.last();
 
     scene.create("Cube", {
-        localPosition: { x: 0, y: 5, z: 0 }
+        localPosition: object.localPosition,
+        localRotation: object.localRotation
     });
 });
 
