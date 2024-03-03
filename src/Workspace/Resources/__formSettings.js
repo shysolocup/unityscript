@@ -19,5 +19,9 @@ Workspace.newF("__formSettings", function(cl, settings) {
 
     // assign them to the class
     Object.assign(cl, fixSettings.pour());
+    Object.defineProperty(cl, "__raw", {
+        value: settings,
+        configurable: true
+    });
     return fixSettings;
 });
