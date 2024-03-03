@@ -55,27 +55,31 @@ Scene.newF("translate", function(data, meta) {
         let name = s[0].replace(":", ""); // removes the : from the name of the property
         let { fileID } = ids[i]; // gets the file id
 
+        try {
+            // if the type class doesn't already exist create it
+            if (!this.parent[name]) {
+                this.parent.newC(name, class extends this.parent.BaseType {
+                    constructor(settings) {
+                        super(settings);
+                    }
+                });
+            }
 
-        // if the type class doesn't already exist create it
-        if (!this.parent[name]) {
-            this.parent.newC(name, class extends this.parent.BaseType {
-                constructor(settings) {
-                    super(settings);
-                }
-            });
+
+            let obj = this.__createChild(name, stuff); // creates a new child obj
+            
+            
+            // this part is mostly just for like making sure that objects get put in Scene.objects and UnityscriptWorkspace.objects
+            if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); this.parent.objects.push(fileID, obj); }
+            if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
+            if (obj instanceof this.parent.Camera) { this.cameras.push(fileID, obj); }
+
+
+            // finally adds it to the children
+            this.children.push(fileID, obj);
+            
+        } catch(e) {
+            console.log(e);
         }
-
-
-        let obj = this.__createChild(name, stuff); // creates a new child obj
-        
-        
-        // this part is mostly just for like making sure that objects get put in Scene.objects and UnityscriptWorkspace.objects
-        if (obj instanceof this.parent.GameObject) { this.objects.push(fileID, obj); this.parent.objects.push(fileID, obj); }
-        if (obj instanceof this.parent.Light) { this.lights.push(fileID, obj); }
-        if (obj instanceof this.parent.Camera) { this.cameras.push(fileID, obj); }
-
-
-        // finally adds it to the children
-        this.children.push(fileID, obj);
     });
 });
