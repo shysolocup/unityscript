@@ -4,7 +4,7 @@ const OUT = new Soup(Object);
 
 class GameObject {
     constructor(settings) {
-        let fixedSettings = this.parent.__formSettings(this, settings);
+        this.extend(this.parent.BaseType, settings);
     }
 }
 
