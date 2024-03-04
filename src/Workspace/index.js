@@ -89,7 +89,7 @@ flags = Object.fromEntries(flags.map( (e, i) => [e, i]));
 OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
 OUT.push("Typings", new Soup(Object));
 OUT.push("ObjectHideFlags", flags);
-Out.push("Workspaces", Workspaces);
+OUT.push("Workspaces", Workspaces);
 module.exports = OUT.pour();
 
 
