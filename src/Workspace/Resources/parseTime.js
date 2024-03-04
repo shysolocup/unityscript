@@ -1,7 +1,7 @@
 const { Workspace } = require('../index.js');
 
 
-Workspace.newF("parseTime", function(string) {
+function parseTime(string) {
     if (typeof string != "string") {
       return parseFloat(string);
     }
@@ -16,4 +16,8 @@ Workspace.newF("parseTime", function(string) {
     else if (thing == "w") { return parseFloat(t.join(""))*60*60*24*7; }
     else if (thing == "y") { return parseFloat(t.join(""))*60*60*24*365; }
     else { return parseFloat(string); }
-});
+}
+
+
+Workspace.newF("parseTime", parseTime);
+module.exports = parseTime;
