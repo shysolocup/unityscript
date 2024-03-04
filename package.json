@@ -1,6 +1,6 @@
 {
     "name": "unityscript",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "author": "paishee",
     "description": "A JavaScript-to-C# Compiler for Unity",
     "repository": {
@@ -25,7 +25,9 @@
         "stews",
         "games",
         "gamedev",
-        "unityscript"
+        "unityscript",
+        "compiler",
+        "transpiler"
     ],
     "homepage": "https://github.com/paishee/unityscript",
     "main": "src/Workspace/index.js"
