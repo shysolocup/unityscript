@@ -6,7 +6,7 @@ const util = require('util');
 
 class GISettings {
     constructor(settings) {
-        this.parent.__formSettings(this, settings);
+        this.extend(this.parent.BaseType, settings);
     }
 }
 
