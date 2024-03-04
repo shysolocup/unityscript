@@ -5,7 +5,9 @@ const OUT = new Soup(Object);
 class BaseSettings {
     constructor(settings=null) {
         if (settings) {
-            this.objectHideFlags = settings.objectHideFlags;
+            let { ObjectHideFlags } = require('../../Workspace');
+
+            this.objectHideFlags = Object.values(ObjectHideFlags)[settings.objectHideFlags];
             this.serializedVersion = settings.serializedVersion;
         }
     }
