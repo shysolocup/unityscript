@@ -34,7 +34,7 @@ class UnityscriptWorkspace {
         this.events = new this.EventGroup; // event list
         this.scenes = new this.SceneGroup; // scene list
         this.scripts = new this.ScriptGroup; // script list
-        this.objects = new this.GameObjectGroup; // object list
+        this.objects = new this.GameObjectGroup; // global object list between all scenes
 
 
         // base client events
@@ -93,6 +93,16 @@ types.forEach( res => {
         Workspace.newC(typeName, type);
     })
 });
+
+
+
+/* group exports that automatically define so you don't have to import them manually
+
+ex:
+const { Workspace } = require('unityscript');
+
+console.log(ObjectHideFlags);
+*/
 
 
 return [ ObjectHideFlags ] = [ flags ];
