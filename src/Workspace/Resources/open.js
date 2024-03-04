@@ -18,5 +18,5 @@ Workspace.newF("open", function(projectDir) { // function for opening the worksp
     this.__buildScripts();
 
     // event firing
-    this.events.ready.fire(this, this.aliveInterval); // fires the ready event
+    this.events.open.fire(this, this.aliveInterval); // fires the open event
 });
