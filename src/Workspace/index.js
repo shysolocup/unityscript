@@ -51,6 +51,7 @@ class UnityscriptWorkspace {
 		
         // directories
         this.projectDir = undefined; // directory for the project
+        this.settingsDir = undefined; // directory for the project's settings
         this.assetsDir = undefined; // directory for the project's assets
         this.scenesDir = undefined; // directory for the project's scenes
         this.scriptsDir = undefined; // directory for the project's scripts
