@@ -61,11 +61,17 @@ class UnityscriptWorkspace {
 
 
 
+// ObjectHideFlags
+let flags = ["None", "HideInHierarchy", "HideInInspector", "DontSaveInEditor", "NotEditable", "DontSaveInBuild", "DontUnloadUnusedAsset", "DontSave", "HideAndDontSave"];
+flags = Object.fromEntries(flags.map( (e, i) => [e, i]));
+
+
 
 // exporting out stuff
 const OUT = new Soup(Object);
 OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
 OUT.push("Typings", new Soup(Object));
+OUT.push("ObjectHideFlags", flags);
 module.exports = OUT.pour();
 
 
@@ -87,3 +93,6 @@ types.forEach( res => {
         Workspace.newC(typeName, type);
     })
 });
+
+
+return [ ObjectHideFlags ] = [ flags ];
