@@ -7,6 +7,10 @@ class BaseType {
     constructor(settings) {
         this.parent.__formSettings(this, settings);
 
+        try {
+            if (settings.__value) settings = settings.__value;
+        } catch(e) { }
+
         if (this.objectHideFlags) {
             let { ObjectHideFlags } = require('../../Workspace');
 
