@@ -7,13 +7,15 @@ class BaseSettings {
         if (settings) {
             let { ObjectHideFlags } = require('../../Workspace');
 
-            if (settings.objectHideFlags == false) settings.objectHideFlags = 0;
-            else if (settings.objectHideFlags == true) settings.objectHideFlags = 1;
+            if (settings.objectHideFlags) {
+                if (settings.objectHideFlags == false) settings.objectHideFlags = 0;
+                else if (settings.objectHideFlags == true) settings.objectHideFlags = 1;
+    
+                this.objectHideFlags = Object.keys(ObjectHideFlags)[settings.objectHideFlags];
+            }
 
-            this.objectHideFlags = Object.keys(ObjectHideFlags)[settings.objectHideFlags];
 
-            
-            this.serializedVersion = settings.serializedVersion;
+            if (settings.serializedVersion) this.serializedVersion = settings.serializedVersion;
         }
     }
 }
