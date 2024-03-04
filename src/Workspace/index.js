@@ -33,6 +33,14 @@ class UnityscriptWorkspace {
 		this.id = this.__generateID(18, "1234567890");
 		Workspaces.push(this.id, this);
 
+
+		// workspace type (2D or 3D)
+		this.type = 0;
+		if (settings.type) {
+			if (typeof settings.type == "string") this.type = (settings.type.toLowerCase() == "3d") ? 0 : (settings.type.toLowerCase() == "2d") ? 1 : 0;
+			else this.type = settings.type;
+		}
+
 		
 		// instances
 		Object.defineProperty(this, "__instances", {
