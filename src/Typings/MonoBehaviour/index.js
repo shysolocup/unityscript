@@ -5,7 +5,7 @@ const OUT = new Soup(Object);
 
 class MonoBehaviour {
     constructor(settings) {
-        this.parent.__formSettings(this, settings);
+        this.extend(this.parent.BaseType, settings);
     }
 }
 
