@@ -30,7 +30,7 @@ class UnityscriptWorkspace {
     constructor(settings={}) {
 
 		// workspace id
-		this.id = this.generateID(18);
+		this.id = this.__generateID(18);
 		Workspaces.push(this.id, this);
 
 		
