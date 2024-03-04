@@ -121,6 +121,10 @@ types.forEach( res => {
 });
 
 
+// parseTime for sleep
+const parseTime = require('./Resources/parseTime.js');
+
+
 
 /* group exports that automatically define so you don't have to import them manually
 
@@ -141,6 +145,6 @@ return [
 ] = [
 	
 	flags,
-	function(time) { return new Promise(resolve => setTimeout(resolve, this.parse(time)*1000)) },
-	function(time) { return new Promise(resolve => setTimeout(resolve, this.parse(time))) }
+	function(time) { return new Promise(resolve => setTimeout(resolve, parseTime(time)*1000)) },
+	function(time) { return new Promise(resolve => setTimeout(resolve, parseTime(time))) }
 ];
