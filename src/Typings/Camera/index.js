@@ -17,6 +17,8 @@ class Camera {
         */
 
         this.backgroundColor = this.parent.Color.fromColor3(fixedSettings.backGroundColor.__value);
+        delete this.backGroundColor;
+        
         this.cullingMask = new this.parent.CullingMask(fixedSettings.cullingMask.__value);
     }
 }
