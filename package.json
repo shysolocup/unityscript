@@ -22,7 +22,11 @@
     "keywords": [
         "unity",
         "aepl",
-        "stews"
+        "stews",
+        "games",
+        "gamedev",
+        "games",
+        "unityscript"
     ],
     "homepage": "https://github.com/paishee/unityscript",
     "main": "src/Workspace/index.js"
