@@ -4,7 +4,7 @@ const OUT = new Soup(Object);
 
 class Camera {
     constructor(settings) {
-        let fixedSettings = this.parent.__formSettings(this, settings);
+        let fixedSettings = this.extend(this.parent.BaseType, settings);
 
         /*
             I tried to get normalized view port rect working but it for some reason kept failling
