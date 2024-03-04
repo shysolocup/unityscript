@@ -135,8 +135,8 @@ console.log(ObjectHideFlags);
 
 return [ 
 	ObjectHideFlags, 
-	wait,
-	waitMs
+	sleep,
+	sleepMs
 	
 ] = [
 	
