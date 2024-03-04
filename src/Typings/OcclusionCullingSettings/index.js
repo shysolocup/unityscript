@@ -4,7 +4,7 @@ const OUT = new Soup(Object);
 
 class OcclusionCullingSettings {
     constructor(settings) {
-        let fixedSettings = this.parent.__formSettings(this, settings);
+        let fixedSettings = this.extend(this.parent.BaseType, settings);
         this.extend(this.parent.BaseSettings, fixedSettings);
         this.occlusionBakeSettings = new this.parent.OcclusionBakeSettings(fixedSettings.occlusionBakeSettings);
     }
