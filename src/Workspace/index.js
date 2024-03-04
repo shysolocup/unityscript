@@ -19,10 +19,28 @@ const fs = require('fs');
 
 
 
+// extras
+const OUT = new Soup(Object);
+const Workspaces = new Soup(Object);
+
+
+
 
 class UnityscriptWorkspace {
     constructor(settings={}) {
-        
+
+		// workspace id
+		this.id = this.generateID(18);
+		Workspaces.push(this.id, this);
+
+		
+		// instances
+		Object.defineProperty(this, "__instances", {
+			value: Workspaces,
+			configurable: true
+		});
+
+		
         // directories
         this.projectDir = undefined; // directory for the project
         this.assetsDir = undefined; // directory for the project's assets
@@ -68,10 +86,10 @@ flags = Object.fromEntries(flags.map( (e, i) => [e, i]));
 
 
 // exporting out stuff
-const OUT = new Soup(Object);
 OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
 OUT.push("Typings", new Soup(Object));
 OUT.push("ObjectHideFlags", flags);
+Out.push("Workspaces", Workspaces);
 module.exports = OUT.pour();
 
 
