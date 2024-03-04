@@ -1,5 +1,5 @@
 const { Workspace } = require('../index.js');
-const random = require('@stews/random');
+const { random } = require('stews');
 
 
 Workspace.newF("__generateID", function(length=5, characters=null) {
