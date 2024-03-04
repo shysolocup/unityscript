@@ -8,7 +8,7 @@
 <a href="https://github.com/paishee/unityscript/wiki"><img height=22 src="https://img.shields.io/badge/documentation-blue?style=flat&color=black&logo=github&logoColor=white" alt="documentation" />
 <img height=22 src="https://github.com/paishee/unityscript/actions/workflows/publish.yml/badge.svg" alt="publish">
 
-UnityScript is an early access JavaScript to C# compiler and API wrapper package for the game engine Unity<br>
+UnityScript is an early access JavaScript to C# transpiler and API wrapper package for the game engine Unity<br>
 
 ⚠️ __PLEASE NOTE:__
 this package is currently in early access and is far from finished ⚠️ 
