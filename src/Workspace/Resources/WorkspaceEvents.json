@@ -1,3 +1,4 @@
 [
-    "ready"
+    [ "open", "ready" ],
+    "close"
 ]
