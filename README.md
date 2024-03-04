@@ -1,3 +1,9 @@
+[comment]: => (
+                    I KNOW IT'S A TRANSPILER NOT A COMPILER NERD SILENCE
+)
+
+
+
 ---
 
 ### <a href="https://github.com/paishee/unityscript"><img height=80 src="https://github.com/paishee/unityscript/blob/main/assets/unityscript%20w%20text.png" alt="UnityScript">
