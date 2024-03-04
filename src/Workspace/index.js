@@ -141,6 +141,6 @@ return [
 ] = [
 	
 	flags,
-	function(time) { return new Promise(resolve => setTimeout(resolve, this.parse(time)*1000)) }),
-	function(time) { return new Promise(resolve => setTimeout(resolve, this.parse(time))) })
+	function(time) { return new Promise(resolve => setTimeout(resolve, this.parse(time)*1000)) },
+	function(time) { return new Promise(resolve => setTimeout(resolve, this.parse(time))) }
 ];
