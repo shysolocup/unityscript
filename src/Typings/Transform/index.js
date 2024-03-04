@@ -4,7 +4,7 @@ const OUT = new Soup(Object);
 
 class Transform {
     constructor(settings) {
-        let fixedSettings = this.parent.__formSettings(this, settings);
+        let fixedSettings = this.extend(this.parent.BaseType, settings);
         let fileID = this.gameObject.fileID;
 
         let obj = this.parent.objects[fileID];
