@@ -1,4 +1,4 @@
-const Workspace = require('../index.js');
+const { Workspace } = require('../index.js');
 const random = require('@stews/random');
 
 
