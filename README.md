@@ -15,12 +15,41 @@ this package is currently in early access and is far from finished ⚠️
 
 <br>
 
+<table>
+
+<tr><td>
+
+### Installations
+
+</td></tr>
+<tr><td>
+
+<table><tr>
+<td>
+
+stable release versions are on [npm](https://npmjs.com/package/unityscript)
+
+</td><td>
+
+experimental versions are on [github](https://github.com/paishee/unityscript)
+
+</td></tr><tr><td>
+
 ```console
 npm install unityscript
 ```
+
+</td><td>
+
 ```console
-npm install paishee/unityscript
+npm install paishee/unityscript      
 ```
+
+</td>
+</table>
+</td>
+
+</tr></table>
 
 <br>
 
