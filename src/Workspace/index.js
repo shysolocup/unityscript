@@ -100,6 +100,7 @@ types.forEach( res => {
 
 ex:
 const { Workspace } = require('unityscript');
+const workspace = new Workspace();
 
 console.log(ObjectHideFlags);
 */
