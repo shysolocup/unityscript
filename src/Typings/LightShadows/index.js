@@ -5,7 +5,7 @@ const OUT = new Soup(Object);
 
 class LightShadows {
     constructor(settings) {
-        this.parent.__formSettings(this, settings.__value);
+        this.extend(this.parent.BaseType, settings);
     }
 }
 
