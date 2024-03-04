@@ -62,6 +62,7 @@ class UnityscriptWorkspace {
         this.scenes = new this.SceneGroup; // scene list
         this.scripts = new this.ScriptGroup; // script list
         this.objects = new this.GameObjectGroup; // global object list between all scenes
+		this.settings = new Soup(Object); // project settings list
 
 
         // base client events
