@@ -18,5 +18,5 @@ Workspace.newF("newScript", function(name, data) { // function for opening the w
 
     fileData.push(parts.start.replace("SCRIPT_NAME_HERE", name));
 
-    fs.writeFileSync(`${this.scriptsDir}/${name}.cs` fileData.join("\n"));
+    fs.writeFileSync(`${this.scriptsDir}/${name}.cs`, fileData.join("\n"));
 });
