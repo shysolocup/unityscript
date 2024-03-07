@@ -55,6 +55,10 @@ class UnityscriptWorkspace {
         this.assetsDir = undefined; // directory for the project's assets
         this.scenesDir = undefined; // directory for the project's scenes
         this.scriptsDir = undefined; // directory for the project's scripts
+		
+		this.partsDir = `${__dirname.replace("Workspace", "CS")}/ScriptParts`; // directory for script parts
+		this.mainPartsDir = `${this.partsDir}/Main`; // directory for main script parts
+		this.actionPartsDir = `${this.partsDir}/Actions`; // directory for action script parts
 
 
         // groups
