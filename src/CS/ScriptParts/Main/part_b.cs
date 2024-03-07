@@ -1,4 +1,2 @@
-}
-
-void Update() {
+} void Update() {
         
