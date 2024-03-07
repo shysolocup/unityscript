@@ -4,7 +4,7 @@ const fs = require('fs');
 
 Workspace.newF("newScript", function(name, data) { // function for opening the workspace
 
-    function getPart(fileName) {
+    getPart = (fileName) => {
         return fs.readFileSync(`${this.mainPartsDir}/${fileName}.cs`, 'utf8')
     }
 
