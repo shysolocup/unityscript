@@ -7,4 +7,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class
+public class SCRIPT_NAME_HERE : MonoBehaviour {
+    
+    
+void Start() {
+    
+
