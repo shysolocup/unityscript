@@ -1,0 +1,1 @@
+GameObject PART_NAME_HERE = GameObject.createPrimitive(PrimitiveType.TYPE_NAME_HERE);
