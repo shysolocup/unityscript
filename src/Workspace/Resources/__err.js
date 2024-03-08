@@ -1,8 +1,10 @@
 const { Workspace } = require('../index.js');
 
 Workspace.newF("__err", function(code) {
+    const err = this.UnityScriptError;
+    
     const errors = {
-        api: this.UnityscriptError(undefined, "UnityscriptError:API")
+        api: new err(undefined, "UnityscriptError:API")
     }
 
     switch(code) {
