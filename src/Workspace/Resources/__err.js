@@ -1,4 +1,4 @@
-const { Workspace } = require('../Workspace');
+const { Workspace } = require('../index.js');
 
 Workspace.newF("__err", function(code) {
     const errors = {
