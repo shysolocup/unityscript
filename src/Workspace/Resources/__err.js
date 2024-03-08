@@ -4,7 +4,7 @@ Workspace.newF("__err", function(code) {
     const err = this.UnityscriptError;
     
     const errors = {
-        api: new err(undefined, "UnityscriptError:API")
+        api: new err(undefined, "UnityscriptError@API")
     }
 
     switch(code) {
