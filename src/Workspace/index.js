@@ -19,9 +19,10 @@ const fs = require('fs');
 
 
 
-// extras
+// resources
 const OUT = new Soup(Object);
 const Workspaces = new Soup(Object);
+const typings = new Soup(Object);
 
 
 
@@ -92,20 +93,42 @@ class UnityscriptWorkspace {
 }
 
 
+// Workspace
+aepl.init("Workspace", UnityscriptWorkspace)
+
 
 // ObjectHideFlags
 let flags = ["None", "HideInHierarchy", "HideInInspector", "DontSaveInEditor", "NotEditable", "DontSaveInBuild", "DontUnloadUnusedAsset", "DontSave", "HideAndDontSave"];
 flags = Object.fromEntries(flags.map( (e, i) => [e, i]));
 
 
+// PrimitiveTypes
+let primTypes = ["Sphere", "Capsule", "Cylinder", "Cube", "Plane", "Quad"];
+primTypes.forEach( type => {
+    let typed = aepl.init(type);
+    typings.push(type, typed);
+    Workspace.newC(type, typed);
+});
+primTypes = Object.fromEntries(primTypes.map( type => [type, typings[type] ] ));
+
+
 
 // exporting out stuff
-OUT.push("Workspace", aepl.init("Workspace", UnityscriptWorkspace) );
-OUT.push("Typings", new Soup(Object));
+OUT.push("Workspace", Workspace);
+OUT.push("Typings", typings);
+OUT.push("PrimitiveType", primTypes);
 OUT.push("ObjectHideFlags", flags);
 OUT.push("Workspaces", Workspaces);
 module.exports = OUT.pour();
 
+
+// adding to the workspace itself
+OUT.forEach( (prop, value) => {
+    if (!prop.includes("Workspace") && !Workspace[prop] && !Workspace.prototype[prop]) {
+        Workspace.newProp(prop, value);
+        Workspace.newPreProp(prop, value);
+    }
+});
 
 
 // building resources
@@ -145,12 +168,14 @@ console.log(ObjectHideFlags);
 
 return [ 
 	ObjectHideFlags, 
+    PrimitiveType,
 	sleep,
 	sleepMs
 	
 ] = [
 	
 	flags,
+    primTypes,
 	function(time) { return new Promise(resolve => setTimeout(resolve, parseTime(time)*1000)) },
 	function(time) { return new Promise(resolve => setTimeout(resolve, parseTime(time))) }
 ];
